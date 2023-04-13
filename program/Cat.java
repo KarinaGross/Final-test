@@ -1,6 +1,3 @@
-package program;
-import java.util.ArrayList;
-
 public class Cat extends Animal {
 
     public Cat(String name, int age) {
@@ -11,6 +8,11 @@ public class Cat extends Animal {
     @Override
     public String getType() {
         return "Cat";
+    }
+
+    @Override
+    public String toString() {
+        return getType() + " " + name;
     }
     
 }

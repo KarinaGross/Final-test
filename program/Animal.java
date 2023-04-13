@@ -15,7 +15,7 @@ public abstract class Animal {
     public abstract String getType();
 
     public void getCommands() {
-        System.out.println(getType() + " " + name + "умеет: \n");
+        System.out.println(getType() + " " + name + " умеет: \n");
         for (String command : commands) {
             System.out.println("- " + command + "\n");
         }

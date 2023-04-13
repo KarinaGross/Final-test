@@ -1,4 +1,3 @@
-package program;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,6 +23,7 @@ public class Registry {
 
         System.out.println("Введите возраст: ");
         int age = input.nextInt();
+        input.nextLine();
 
         Animal animal;
 
@@ -45,7 +45,7 @@ public class Registry {
         }
 
         listAnimals.add(animal);
-        System.out.println("Животное добавлено!\n");
+        System.out.println("Животное добавлено!");
     }
 
     public static void listAnimals() {
@@ -59,12 +59,13 @@ public class Registry {
         }
     }
 
-    public static Animal findAnimalByName(String name) {
-        for (int i = 0; i < listAnimals.size(); i++) {
-            if (listAnimals.get(i).name == name) {
-                return listAnimals.get(i);
-            } 
+    private static Animal findAnimalByName(String name) {
+        for (Animal animal : listAnimals) {
+            if (animal.name.equals(name)) {
+                return animal;
+            }
         }
+
         return null;
     }
 
@@ -84,6 +85,22 @@ public class Registry {
         animal.addCommands(commandsString);
 
         System.out.println("Животное успешно обучено новым командам");
+    }
+
+    public static void skills() {
+        input.nextLine();
+        System.out.println("Введите имя животного:");
+        String name = input.nextLine();
+        input.nextLine();
+
+        Animal animal = findAnimalByName(name);
+
+        if (animal == null) {
+            System.out.println("Животное с таким именем не найдено");
+            return;
+        }
+        animal.getCommands();
+            
     }
     
 }

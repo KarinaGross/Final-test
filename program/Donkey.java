@@ -1,4 +1,3 @@
-package program;
 public class Donkey extends Animal {
 
     public Donkey(String name, int age) {
@@ -11,4 +10,8 @@ public class Donkey extends Animal {
         return "Donkey";
     }
     
+    @Override
+    public String toString() {
+        return getType() + " " + name;
+    }
 }
